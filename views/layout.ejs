@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NewsWire Hub</title>
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<!-- HEADER -->
+<div id="header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- LOGO -->
+            <div class="col-md-3">
+                <a href="/" id="logo"><img src="/images/news.png" alt="Logo" /></a>
+            </div>
+            <!-- /LOGO -->
+            <!-- Login Button -->
+            <div class="col-md-9 text-end">
+                <a href="/admin" class="btn btn-primary">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /HEADER -->
+
+<!-- Menu Bar -->
+<div id="menu-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class='menu'>
+          <li><a href='/'>Home</a></li>
+          <% categories.forEach(function(category) { %>
+            <li><a href='/category/<%- category.slug %>'><%= category.name %></a></li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Menu Bar -->
+
+<div id="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <%- body %>
+            </div>
+            <!-- sidebar -->
+            <%- include('partials/sidebar') %>
+            <!-- /sidebar -->
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <span>Copyright © 2025 NewsWire Hub. All rights reserved.</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Footer -->
+</body>
+</html>
